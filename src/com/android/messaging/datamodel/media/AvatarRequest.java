@@ -143,7 +143,15 @@ public class AvatarRequest extends UriImageRequest<AvatarRequestDescriptor> {
                 getBackgroundColor(AvatarUriUtil.getIdentifier(mDescriptor.uri)));
         final Resources resources = mContext.getResources();
         final Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        paint.setTypeface(Typeface.create("sans-serif-medium", Typeface.NORMAL));
+        Typeface tf = null;
+        try {
+            tf = ResourcesCompat.getFont(mContext, R.font.google_sans_flex);
+        } catch (Exception ignored) {
+        }
+        if (tf == null) {
+            tf = Typeface.create("sans-serif-medium", Typeface.NORMAL);
+        }
+        paint.setTypeface(tf);
         paint.setColor(resources.getColor(R.color.letter_tile_font_color));
         final float letterToTileRatio = resources.getFraction(R.dimen.letter_to_tile_ratio, 1, 1);
         paint.setTextSize(letterToTileRatio * minOfWidthAndHeight);

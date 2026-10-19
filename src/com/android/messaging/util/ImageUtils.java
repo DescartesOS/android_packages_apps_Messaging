@@ -146,13 +146,14 @@ public class ImageUtils {
         }
 
         bitmapPaint.setAntiAlias(true);
+        final float cornerRadius = dest.width() * 0.32f;
         if (fillBackground) {
             bitmapPaint.setColor(backgroundColor);
-            canvas.drawCircle(dest.centerX(), dest.centerX(), dest.width() / 2f, bitmapPaint);
+            canvas.drawRoundRect(dest, cornerRadius, cornerRadius, bitmapPaint);
         }
 
         bitmapPaint.setShader(shader);
-        canvas.drawCircle(dest.centerX(), dest.centerX(), dest.width() / 2f, bitmapPaint);
+        canvas.drawRoundRect(dest, cornerRadius, cornerRadius, bitmapPaint);
         bitmapPaint.setShader(null);
 
         if (strokeColor != 0) {
@@ -162,10 +163,9 @@ public class ImageUtils {
             stroke.setStyle(Paint.Style.STROKE);
             final float strokeWidth = 6f;
             stroke.setStrokeWidth(strokeWidth);
-            canvas.drawCircle(dest.centerX(),
-                    dest.centerX(),
-                    dest.width() / 2f - stroke.getStrokeWidth() / 2f,
-                    stroke);
+            final RectF strokeDest = new RectF(dest);
+            strokeDest.inset(strokeWidth / 2f, strokeWidth / 2f);
+            canvas.drawRoundRect(strokeDest, cornerRadius, cornerRadius, stroke);
         }
     }
 

@@ -293,6 +293,10 @@ public class ComposeMessageView extends LinearLayout
 
         mMessageBodySize = findViewById(R.id.message_body_size);
         mMmsIndicator = findViewById(R.id.mms_indicator);
+
+        com.android.messaging.ui.M3eMotion.addPressSpring(mSendButton);
+        com.android.messaging.ui.M3eMotion.addPressSpring(mAttachMediaButton);
+        com.android.messaging.ui.M3eMotion.addPressSpring(mSelfSendIcon);
     }
 
     private void hideAttachmentsWhenShowingSims(final boolean simPickerVisible) {

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2026 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<!-- Material 3 Expressive color roles, backed by the dynamic system palette. -->
+<resources>
+    <color name="m3e_primary">@android:color/system_primary_light</color>
+    <color name="m3e_on_primary">@android:color/system_on_primary_light</color>
+    <color name="m3e_primary_container">@android:color/system_primary_container_light</color>
+    <color name="m3e_on_primary_container">@android:color/system_on_primary_container_light</color>
+    <color name="m3e_secondary">@android:color/system_secondary_light</color>
+    <color name="m3e_on_secondary">@android:color/system_on_secondary_light</color>
+    <color name="m3e_secondary_container">@android:color/system_secondary_container_light</color>
+    <color name="m3e_on_secondary_container">@android:color/system_on_secondary_container_light</color>
+    <color name="m3e_tertiary">@android:color/system_tertiary_light</color>
+    <color name="m3e_on_tertiary">@android:color/system_on_tertiary_light</color>
+    <color name="m3e_tertiary_container">@android:color/system_tertiary_container_light</color>
+    <color name="m3e_on_tertiary_container">@android:color/system_on_tertiary_container_light</color>
+    <color name="m3e_surface">@android:color/system_surface_light</color>
+    <color name="m3e_surface_bright">@android:color/system_surface_bright_light</color>
+    <color name="m3e_surface_dim">@android:color/system_surface_dim_light</color>
+    <color name="m3e_surface_container_lowest">@android:color/system_surface_container_lowest_light</color>
+    <color name="m3e_surface_container_low">@android:color/system_surface_container_low_light</color>
+    <color name="m3e_surface_container">@android:color/system_surface_container_light</color>
+    <color name="m3e_surface_container_high">@android:color/system_surface_container_high_light</color>
+    <color name="m3e_surface_container_highest">@android:color/system_surface_container_highest_light</color>
+    <color name="m3e_surface_variant">@android:color/system_surface_variant_light</color>
+    <color name="m3e_on_surface">@android:color/system_on_surface_light</color>
+    <color name="m3e_on_surface_variant">@android:color/system_on_surface_variant_light</color>
+    <color name="m3e_outline">@android:color/system_outline_light</color>
+    <color name="m3e_outline_variant">@android:color/system_outline_variant_light</color>
+    <color name="m3e_error">@android:color/system_error_light</color>
+    <color name="m3e_on_error">@android:color/system_on_error_light</color>
+    <color name="m3e_error_container">@android:color/system_error_container_light</color>
+    <color name="m3e_on_error_container">@android:color/system_on_error_container_light</color>
+    <color name="m3e_fab">@color/m3e_primary_container</color>
+    <color name="m3e_on_fab">@color/m3e_on_primary_container</color>
+    <color name="m3e_bubble_incoming">@color/m3e_surface_container_high</color>
+    <color name="m3e_on_bubble_incoming">@color/m3e_on_surface</color>
+    <color name="m3e_bubble_outgoing">@color/m3e_primary</color>
+    <color name="m3e_on_bubble_outgoing">@color/m3e_on_primary</color>
+    <color name="m3e_ripple_on_primary_container">#33000000</color>
+    <color name="m3e_ripple_on_surface">#1f000000</color>
+</resources>

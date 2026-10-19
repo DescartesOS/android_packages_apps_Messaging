@@ -19,6 +19,11 @@
     xmlns:appcompat="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools" >
 
+    <item android:id="@+id/action_search"
+        android:title="@string/m3e_search_hint"
+        android:icon="@drawable/ic_search"
+        appcompat:showAsAction="always" />
+
     <item android:id="@+id/action_start_new_conversation"
         android:title="@string/start_new_conversation"
         android:icon="@drawable/ic_add_white"

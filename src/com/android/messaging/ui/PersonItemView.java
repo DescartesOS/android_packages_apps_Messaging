@@ -73,6 +73,7 @@ public class PersonItemView extends LinearLayout implements PersonItemDataListen
         mContactIconView = findViewById(R.id.contact_icon);
         mDetailsContainer = findViewById(R.id.details_container);
         mNameTextView.addOnLayoutChangeListener(this);
+        com.android.messaging.ui.M3eMotion.addPressSpring(this);
     }
 
     @Override

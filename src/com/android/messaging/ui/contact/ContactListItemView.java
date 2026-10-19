@@ -71,6 +71,7 @@ public class ContactListItemView extends LinearLayout implements OnClickListener
         mContactIconView = findViewById(R.id.contact_icon);
         mContactCheckmarkView = findViewById(R.id.contact_checkmark);
         mWorkProfileIcon = findViewById(R.id.work_profile_icon);
+        com.android.messaging.ui.M3eMotion.addPressSpring(this);
     }
 
     /**

@@ -71,8 +71,15 @@ public class BugleActionBarActivity extends AppCompatActivity implements ImeUtil
         mLastScreenHeight = getResources().getDisplayMetrics().heightPixels;
         LogUtil.v(LogUtil.BUGLE_TAG, this.getLocalClassName() + ".onCreate");
 
-        getWindow().setStatusBarColor(getResources().getColor(R.color.action_bar_background_color,
-                getTheme()));
+        getWindow().setStatusBarColor(android.graphics.Color.TRANSPARENT);
+        getWindow().setNavigationBarColor(android.graphics.Color.TRANSPARENT);
+        final androidx.core.view.WindowInsetsControllerCompat insetsController =
+                androidx.core.view.WindowCompat.getInsetsController(getWindow(), getWindow().getDecorView());
+        if (insetsController != null) {
+            final boolean lightBars = getResources().getBoolean(R.bool.m3e_light_bars);
+            insetsController.setAppearanceLightStatusBars(lightBars);
+            insetsController.setAppearanceLightNavigationBars(lightBars);
+        }
     }
 
     @Override

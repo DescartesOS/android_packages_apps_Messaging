@@ -170,6 +170,8 @@ public class ConversationListItemView extends FrameLayout implements OnClickList
         mListItemReadTypeface = Typefaces.getRobotoNormal();
         mListItemUnreadTypeface = Typefaces.getRobotoBold();
 
+        com.android.messaging.ui.M3eMotion.addPressSpring(mSwipeableContent);
+
         setTransitionGroup(true);
     }
 

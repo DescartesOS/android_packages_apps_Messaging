@@ -30,7 +30,16 @@ public class Typefaces {
     public static Typeface getRobotoBold() {
         Assert.isMainThread();
         if (sRobotoBold == null) {
-            sRobotoBold = Typeface.create(Typeface.SANS_SERIF, Typeface.BOLD);
+            try {
+                final android.content.Context context = com.android.messaging.Factory.get().getApplicationContext();
+                final Typeface flex = androidx.core.content.res.ResourcesCompat.getFont(
+                        context, com.android.messaging.R.font.google_sans_flex);
+                sRobotoBold = (flex != null)
+                        ? Typeface.create(flex, 700, false)
+                        : Typeface.create(Typeface.SANS_SERIF, Typeface.BOLD);
+            } catch (Exception e) {
+                sRobotoBold = Typeface.create(Typeface.SANS_SERIF, Typeface.BOLD);
+            }
         }
         return sRobotoBold;
     }
@@ -38,7 +47,16 @@ public class Typefaces {
     public static Typeface getRobotoNormal() {
         Assert.isMainThread();
         if (sRobotoNormal == null) {
-            sRobotoNormal = Typeface.create(Typeface.SANS_SERIF, Typeface.NORMAL);
+            try {
+                final android.content.Context context = com.android.messaging.Factory.get().getApplicationContext();
+                final Typeface flex = androidx.core.content.res.ResourcesCompat.getFont(
+                        context, com.android.messaging.R.font.google_sans_flex);
+                sRobotoNormal = (flex != null)
+                        ? flex
+                        : Typeface.create(Typeface.SANS_SERIF, Typeface.NORMAL);
+            } catch (Exception e) {
+                sRobotoNormal = Typeface.create(Typeface.SANS_SERIF, Typeface.NORMAL);
+            }
         }
         return sRobotoNormal;
     }

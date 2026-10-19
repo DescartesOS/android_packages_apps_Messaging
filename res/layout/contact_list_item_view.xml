@@ -24,7 +24,7 @@
     android:layout_height="wrap_content"
     android:paddingTop="8dp"
     android:paddingBottom="8dp"
-    android:background="?android:attr/selectableItemBackground">
+    android:background="@drawable/m3e_list_selector">
 
     <TextView
         style="@style/ContactListAlphabetHeader"

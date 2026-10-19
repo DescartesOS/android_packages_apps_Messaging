@@ -19,10 +19,18 @@
     <!--
         Base application theme
     -->
-    <style name="BugleBaseTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
-        <item name="android:forceDarkAllowed">true</item>
-        <item name="android:navigationBarColor">@color/navigation_bar_bg</item>
-        <item name="android:windowLightNavigationBar">@bool/light_navigation_bar</item>
+    <style name="BugleBaseTheme" parent="Theme.Material3.DayNight">
+        <item name="android:forceDarkAllowed">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">@bool/m3e_light_bars</item>
+        <item name="android:windowLightNavigationBar">@bool/m3e_light_bars</item>
+        <item name="android:enforceStatusBarContrast">false</item>
+        <item name="android:enforceNavigationBarContrast">false</item>
+        <item name="android:fontFamily">@font/google_sans_flex</item>
+        <item name="fontFamily">@font/google_sans_flex</item>
+        <item name="android:dialogCornerRadius">@dimen/m3e_dialog_corner</item>
+        <item name="dialogCornerRadius">@dimen/m3e_dialog_corner</item>
         <item name="android:elegantTextHeight">true</item>
     </style>
 
@@ -30,18 +38,46 @@
     <style name="BugleTheme" parent="BugleBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
          <item name="android:dropDownListViewStyle">@style/DropDownListViewStyle</item>
-         <item name="colorPrimary">@color/action_bar_background_color</item>
-         <item name="colorPrimaryDark">@color/action_bar_background_color_dark</item>
+         <item name="colorPrimary">@color/m3e_primary</item>
+         <item name="colorSecondary">@color/m3e_secondary</item>
          <item name="colorAccent">@color/lineage_accent</item>
+         <item name="colorSurface">@color/m3e_surface</item>
+         <item name="colorSurfaceContainer">@color/m3e_surface_container</item>
+         <item name="colorSurfaceContainerHigh">@color/m3e_surface_container_high</item>
+         <item name="colorOnSurface">@color/m3e_on_surface</item>
+         <item name="colorOnSurfaceVariant">@color/m3e_on_surface_variant</item>
          <item name="android:textColorHighlight">@color/text_highlight_color</item>
          <item name="actionBarStyle">@style/BugleActionBar</item>
+         <item name="actionButtonStyle">@style/Widget.Bugle.ToolbarAction</item>
+         <item name="actionOverflowButtonStyle">@style/Widget.Bugle.ToolbarAction.Overflow</item>
+         <item name="floatingActionButtonStyle">@style/Widget.Bugle.FloatingActionButton</item>
          <item name="alertDialogTheme">@style/AlertDialogTheme</item>
-        <item name="preferenceTheme">@style/AppPreferenceThemeOverlay</item>
+         <item name="preferenceTheme">@style/AppPreferenceThemeOverlay</item>
     </style>
 
-    <style name="LaunchTheme" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-         <item name="colorPrimary">@color/action_bar_background_color</item>
-         <item name="colorPrimaryDark">@color/action_bar_background_color_dark</item>
+    <style name="Widget.Bugle.ToolbarAction" parent="Widget.AppCompat.ActionButton">
+        <item name="android:background">@drawable/m3e_tonal_circle</item>
+        <item name="android:minWidth">48dp</item>
+        <item name="android:minHeight">48dp</item>
+    </style>
+
+    <style name="Widget.Bugle.ToolbarAction.Overflow" parent="Widget.AppCompat.ActionButton.Overflow">
+        <item name="android:background">@drawable/m3e_tonal_circle</item>
+        <item name="android:minWidth">48dp</item>
+        <item name="android:minHeight">48dp</item>
+    </style>
+
+    <style name="Widget.Bugle.FloatingActionButton" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay</item>
+    </style>
+
+    <style name="LaunchTheme" parent="Theme.Material3.DayNight">
+         <item name="android:statusBarColor">@android:color/transparent</item>
+         <item name="android:navigationBarColor">@android:color/transparent</item>
+         <item name="android:windowLightStatusBar">@bool/m3e_light_bars</item>
+         <item name="android:windowLightNavigationBar">@bool/m3e_light_bars</item>
+         <item name="colorPrimary">@color/m3e_primary</item>
+         <item name="actionBarStyle">@style/BugleActionBar</item>
          <item name="android:elegantTextHeight">true</item>
     </style>
 
@@ -60,8 +96,11 @@
 
     <style name="BugleTheme.DialogActivity" parent="@style/Theme.MaterialComponents.DayNight.Dialog">
         <item name="android:windowNoTitle">false</item>
-        <item name="android:background">@color/window_background</item>
-        <item name="android:dialogCornerRadius">28dp</item>
+        <item name="android:background">@color/m3e_surface_container_high</item>
+        <item name="android:dialogCornerRadius">@dimen/m3e_dialog_corner</item>
+        <item name="dialogCornerRadius">@dimen/m3e_dialog_corner</item>
+        <item name="android:windowBlurBehindEnabled">true</item>
+        <item name="android:windowBlurBehindRadius">16dp</item>
         <item name="android:elegantTextHeight">true</item>
     </style>
 
@@ -89,14 +128,19 @@
     </style>
 
     <style name="BugleActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid">
-        <item name="height">@dimen/action_bar_height</item>
+        <item name="height">@dimen/m3e_toolbar_height</item>
+        <item name="elevation">0dp</item>
+        <item name="background">@color/action_bar_background_color</item>
         <item name="displayOptions">showTitle</item>
         <item name="titleTextStyle">@style/BugleActionBarTitleTextStyle</item>
     </style>
 
     <style name="BugleActionBarTitleTextStyle" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
       <item name="android:textColor">@color/action_bar_title_text_color</item>
-      <item name="android:textSize">@dimen/action_bar_text_size</item>
+      <item name="android:textSize">@dimen/m3e_text_title_large</item>
+      <item name="android:fontFamily">@font/google_sans_flex</item>
+      <item name="fontFamily">@font/google_sans_flex</item>
+      <item name="android:textStyle">bold</item>
       <item name="android:lines">1</item>
       <item name="android:textAlignment">viewStart</item>
     </style>
@@ -117,6 +161,9 @@
     <style name="ConversationMessage" parent="ConversationMessageText">
         <item name="android:textSize">@dimen/conversation_message_text_size</item>
         <item name="android:textColor">@color/message_text</item>
+        <item name="android:fontFamily">@font/google_sans_flex</item>
+        <item name="fontFamily">@font/google_sans_flex</item>
+        <item name="android:lineSpacingExtra">2dp</item>
     </style>
 
     <style name="ConversationMessageStatus" parent="ConversationMessageText">
@@ -283,11 +330,16 @@
         <item name="android:background">@null</item>
         <item name="android:textAlignment">viewStart</item>
         <item name="android:textColor">@color/conversation_list_details</item>
+        <item name="android:fontFamily">@font/google_sans_flex</item>
+        <item name="fontFamily">@font/google_sans_flex</item>
     </style>
 
     <style name="ConversationListItemViewConversationNameStyle" parent="ConversationListItemViewTextStyle">
-        <item name="android:textSize">16sp</item>
+        <item name="android:textSize">17sp</item>
         <item name="android:textColor">@color/conversation_list_name</item>
+        <item name="android:fontFamily">@font/google_sans_flex</item>
+        <item name="fontFamily">@font/google_sans_flex</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="ComposeMessageViewFrameLayoutStyle">
@@ -559,14 +611,16 @@
         <item name="android:paddingEnd">40dp</item>
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">@android:color/white</item>
-        <item name="android:fontFamily">roboto-regular</item>
+        <item name="android:fontFamily">@font/google_sans_flex</item>
+        <item name="fontFamily">@font/google_sans_flex</item>
     </style>
     <style name="PromoScreenTextStyle.CenterAligned">
         <item name="android:textAlignment">center</item>
     </style>
     <style name="PromoScreenButtonStyle">
         <item name="android:textSize">14sp</item>
-        <item name="android:fontFamily">roboto-medium</item>
+        <item name="android:fontFamily">@font/google_sans_flex</item>
+        <item name="fontFamily">@font/google_sans_flex</item>
         <item name="android:textAllCaps">true</item>
         <item name="android:textStyle">bold</item>
         <item name="android:background">?android:attr/selectableItemBackground</item>
@@ -582,9 +636,12 @@
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="AlertDialogTheme" parent="@style/ThemeOverlay.AppCompat.Dialog.Alert">
-        <item name="android:background">@color/window_background</item>
-        <item name="dialogCornerRadius">28dp</item>
+    <style name="AlertDialogTheme" parent="@style/ThemeOverlay.MaterialComponents.Dialog.Alert">
+        <item name="android:background">@color/m3e_surface_container_high</item>
+        <item name="android:dialogCornerRadius">@dimen/m3e_dialog_corner</item>
+        <item name="dialogCornerRadius">@dimen/m3e_dialog_corner</item>
+        <item name="android:fontFamily">@font/google_sans_flex</item>
+        <item name="fontFamily">@font/google_sans_flex</item>
     </style>
 
     <style name="AppPreferenceThemeOverlay" parent="@style/PreferenceThemeOverlay">
@@ -597,7 +654,7 @@
 
     <style name="ShapeAppearanceOverlay" parent="">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">16dp</item>
+        <item name="cornerSize">@dimen/m3e_fab_corner_radius</item>
     </style>
 
 </resources>

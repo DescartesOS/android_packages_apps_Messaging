@@ -188,6 +188,8 @@ public class ConversationListFragment extends Fragment implements ConversationLi
         mRecyclerView.setLayoutManager(manager);
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setAdapter(mAdapter);
+        mRecyclerView.setLayoutAnimation(android.view.animation.AnimationUtils.loadLayoutAnimation(
+                activity, R.anim.m3e_list_layout));
         mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             int mCurrentState = AbsListView.OnScrollListener.SCROLL_STATE_IDLE;
 
@@ -220,12 +222,31 @@ public class ConversationListFragment extends Fragment implements ConversationLi
         }
 
         mStartNewConversationButton = rootView.findViewById(R.id.start_new_conversation_button);
+        com.android.messaging.ui.M3eMotion.addPressSpring(mStartNewConversationButton);
         if (mArchiveMode || mForwardMessageMode) {
             mStartNewConversationButton.setVisibility(View.GONE);
         } else {
             mStartNewConversationButton.setVisibility(View.VISIBLE);
             mStartNewConversationButton.setOnClickListener(clickView ->
                     mHost.onCreateConversationClick());
+        }
+
+        final View largeHeader = rootView.findViewById(R.id.large_header);
+        if (mArchiveMode || mForwardMessageMode) {
+            if (largeHeader != null) {
+                largeHeader.setVisibility(View.GONE);
+            }
+        } else {
+            final View searchBar = rootView.findViewById(R.id.large_header_search);
+            if (searchBar != null) {
+                searchBar.setOnClickListener(v -> mHost.onCreateConversationClick());
+                com.android.messaging.ui.M3eMotion.addPressSpring(searchBar);
+            }
+            final View addBadge = rootView.findViewById(R.id.large_header_add);
+            if (addBadge != null) {
+                addBadge.setOnClickListener(v -> mHost.onCreateConversationClick());
+                com.android.messaging.ui.M3eMotion.addPressSpring(addBadge);
+            }
         }
 
         // The root view has a non-null background, which by default is deemed by the framework

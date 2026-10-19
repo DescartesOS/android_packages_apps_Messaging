@@ -48,11 +48,14 @@ public class ConversationListActivity extends AbstractConversationListActivity {
     @Override
     protected void updateActionBar(final ActionBar actionBar) {
         actionBar.setTitle(getString(R.string.app_name));
-        actionBar.setDisplayShowTitleEnabled(true);
+        actionBar.setDisplayShowTitleEnabled(false);
         actionBar.setDisplayHomeAsUpEnabled(false);
+        actionBar.setElevation(0f);
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
         actionBar.setBackgroundDrawable(new ColorDrawable(
-                getResources().getColor(R.color.action_bar_background_color)));
+                getResources().getColor(R.color.action_bar_background_color, getTheme())));
+        actionBar.setCustomView(R.layout.m3e_action_bar_title);
+        actionBar.setDisplayShowCustomEnabled(true);
         actionBar.show();
         super.updateActionBar(actionBar);
     }
@@ -87,7 +90,7 @@ public class ConversationListActivity extends AbstractConversationListActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull final MenuItem menuItem) {
         int itemId = menuItem.getItemId();
-        if (itemId == R.id.action_start_new_conversation) {
+        if (itemId == R.id.action_start_new_conversation || itemId == R.id.action_search) {
             onActionBarStartNewConversation();
             return true;
         } else if (itemId == R.id.action_settings) {

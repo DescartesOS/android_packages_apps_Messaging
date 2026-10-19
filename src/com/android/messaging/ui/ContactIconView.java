@@ -87,8 +87,15 @@ public class ContactIconView extends AsyncImageView {
     public boolean onTouchEvent(MotionEvent event) {
         if (event.getActionMasked() == MotionEvent.ACTION_DOWN) {
             setColorFilter(mColorPressedId);
-        } else {
+            animate().scaleX(0.92f).scaleY(0.92f)
+                    .setInterpolator(M3eMotion.EMPHASIZED_DECELERATE)
+                    .setDuration(M3eMotion.DURATION_SHORT).start();
+        } else if (event.getActionMasked() == MotionEvent.ACTION_UP
+                || event.getActionMasked() == MotionEvent.ACTION_CANCEL) {
             clearColorFilter();
+            animate().scaleX(1f).scaleY(1f)
+                    .setInterpolator(M3eMotion.SPRING_FAST)
+                    .setDuration(M3eMotion.DURATION_LONG).start();
         }
         return super.onTouchEvent(event);
     }

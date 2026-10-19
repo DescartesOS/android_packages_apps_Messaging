@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2026 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="m3e_header_title">Stay in</string>
+    <string name="m3e_header_accent">touch.</string>
+    <string name="m3e_header_subtitle">Every conversation, all in one place.</string>
+    <string name="m3e_search_hint">Search conversations</string>
+    <string name="m3e_empty_title">No messages yet</string>
+    <string name="m3e_empty_subtitle">Conversations you start will appear here.</string>
+</resources>

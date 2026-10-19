@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2026 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<!-- Material 3 Expressive shape, spacing and type scale tokens. -->
+<resources>
+    <!-- Shape scale -->
+    <dimen name="m3e_corner_small">8dp</dimen>
+    <dimen name="m3e_corner_medium">16dp</dimen>
+    <dimen name="m3e_corner_large">24dp</dimen>
+    <dimen name="m3e_corner_extra_large">28dp</dimen>
+    <dimen name="m3e_corner_full">100dp</dimen>
+    <dimen name="m3e_dialog_corner">28dp</dimen>
+
+    <!-- Spacing -->
+    <dimen name="m3e_screen_margin">16dp</dimen>
+    <dimen name="m3e_page_margin">16dp</dimen>
+    <dimen name="m3e_header_margin">20dp</dimen>
+    <dimen name="m3e_list_item_inset">8dp</dimen>
+    <dimen name="m3e_motion_offset">16dp</dimen>
+
+    <!-- Header & Search -->
+    <dimen name="m3e_toolbar_height">64dp</dimen>
+    <dimen name="m3e_header_title_size">40sp</dimen>
+    <dimen name="m3e_header_eyebrow_size">14sp</dimen>
+    <dimen name="m3e_search_pill_height">54dp</dimen>
+    <dimen name="m3e_card_radius">20dp</dimen>
+    <dimen name="m3e_hero_card_radius">28dp</dimen>
+
+    <!-- Floating action button -->
+    <dimen name="m3e_fab_corner_radius">24dp</dimen>
+    <dimen name="m3e_extended_fab_height">56dp</dimen>
+
+    <!-- Message Bubbles -->
+    <dimen name="m3e_bubble_corner_large">24dp</dimen>
+    <dimen name="m3e_bubble_corner_small">6dp</dimen>
+
+    <!-- Type scale -->
+    <dimen name="m3e_text_headline_large">32sp</dimen>
+    <dimen name="m3e_text_headline_medium">28sp</dimen>
+    <dimen name="m3e_text_headline_small">24sp</dimen>
+    <dimen name="m3e_text_title_large">22sp</dimen>
+    <dimen name="m3e_text_title_medium">16sp</dimen>
+    <dimen name="m3e_text_body_large">16sp</dimen>
+    <dimen name="m3e_text_body_medium">14sp</dimen>
+    <dimen name="m3e_text_label_large">14sp</dimen>
+</resources>
